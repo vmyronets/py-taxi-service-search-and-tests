@@ -45,7 +45,8 @@ def validate_license_number(license_number, ) -> bool:
     pattern = r"^[A-Z]{3}\d{5}$"
     if not re.fullmatch(pattern, license_number):
         raise ValidationError(
-            "First 3 characters should be uppercase letters"
+            "License number must consist of exactly three "
+            "uppercase letters followed by five digits."
         )
     return license_number
 
